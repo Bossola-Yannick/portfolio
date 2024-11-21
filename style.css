@@ -1,0 +1,225 @@
+:root {
+  --color1: #1a222e;
+  --color2: #000000;
+  --color3: #07af82;
+  --color4: #57eb73; /*préférence*/
+}
+@font-face {
+  font-family: "font-1";
+  src: url(./assets/font/NotoSerif-Regular.ttf);
+}
+/* -------------------------- Style Commun Général -------------------------- */
+body {
+  background: var(--color1);
+  color: var(--color3);
+  min-height: 100vh;
+  width: 100%;
+  font-family: "font-1", Arial, sans-serif;
+  text-align: center;
+}
+li {
+  list-style: none;
+  cursor: pointer;
+}
+h1 {
+  display: none;
+}
+.section {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3rem 0 3rem 0;
+  text-align: center;
+  position: relative;
+}
+.titre-section {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  padding: 0 0 4rem 0;
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  text-decoration: underline var(--color4) 1px;
+  text-underline-position: under;
+}
+/* -------------------------- BANIERE -------------------------- */
+.baniere-img {
+  width: 100%;
+}
+
+/* -------------------------- ligne séparation des section -------------------------- */
+.section::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--color4);
+  bottom: 0;
+  left: 0;
+}
+/* -------------------------- Section Présentation -------------------------- */
+.presentation {
+  display: flex;
+  justify-content: space-around;
+}
+.presentation-avatar {
+  max-width: 50%;
+}
+.presentation-text {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.alias {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color3);
+  -webkit-text-stroke: 0.1px var(--color4);
+}
+.text {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+/* -------------------------- Section Techno -------------------------- */
+.techno {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.techno-icon-block {
+  width: 50%;
+  height: 5rem;
+  text-align: start;
+}
+.techno-icon {
+  height: 100%;
+  max-width: 90%;
+}
+.techno-spe-titre {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.techno-spe {
+  font-size: 2rem;
+}
+/* -------------------------- Section Projets -------------------------- */
+.projet-box {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+}
+.carte-projet {
+  width: 25%;
+  border: 2px solid var(--color3);
+  border-radius: 2rem;
+  box-shadow: -1px 1px 12px 6px var(--color4);
+  overflow: hidden;
+}
+.titre-carte {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: var(--color4);
+  color: var(--color1);
+  letter-spacing: 0.1rem;
+}
+.visuel-projet {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color4);
+}
+.visuel-projet img {
+  max-width: 100%;
+}
+.descriptif-projet {
+  margin: 1rem;
+  height: 3rem;
+}
+.techno-projet {
+  width: 100%;
+  border-top: 2px solid var(--color4);
+  padding-top: 1rem;
+  margin: 1rem 0;
+}
+.techno-projet-icon {
+  max-width: 90%;
+}
+/* -------------------------- Section Contact -------------------------- */
+.icon-contact {
+  margin: 20px 0;
+}
+.list-icon {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3rem;
+}
+a {
+  color: var(--color4);
+  text-decoration: none;
+}
+#malt-logo {
+  background: url(./assets/img/Malt_logo.png) no-repeat center;
+  background-size: contain;
+  width: 70%;
+  height: 70%;
+}
+.footer-img {
+  width: 100%;
+}
+
+/* --------------------------  Media Queries ------------------------------------- */
+/* max 1100px */
+@media screen and (max-width: 1100px) {
+  .techno {
+    justify-content: left;
+  }
+  .descriptif-projet {
+    display: none;
+  }
+}
+
+/*  min 750px-max 1100px   */
+@media screen and (max-width: 1000px) {
+  .presentation {
+    flex-direction: column;
+  }
+  .presentation-avatar,
+  .presentation-text {
+    max-width: 100%;
+  }
+  .carte-projet {
+    width: 40%;
+  }
+}
+/* min 500px-max 800px */
+@media screen and (max-width: 400px) {
+  .avatar-img {
+    max-width: 100%;
+  }
+  .projet-box {
+    flex-direction: column;
+  }
+  .carte-projet {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .techno {
+    flex-direction: column;
+  }
+  .techno-spe-titre {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .techno-icon-block {
+    width: 100%;
+  }
+  .techno-icon {
+    max-width: 100%;
+  }
+}
